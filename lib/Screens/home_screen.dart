@@ -8,6 +8,8 @@ class HomeScreen extends StatelessWidget {
 
     const fontSize = TextStyle( fontSize: 30 );
 
+    int counter = 10;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('GMJ Hogar Mobile'),
@@ -15,19 +17,21 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 149, 10, 0),
         elevation: 0,
       ),
-      body: const Center(
+      body: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-            Text('Número De Clicks', style: fontSize,),
-            Text('10', style: fontSize,),
+            const Text('Número De Clicks', style: fontSize,),
+            Text('$counter', style: fontSize,),
           ],
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: (){
-          print('Hola Mundo');
+          counter++;
+          print('Hola Mundo: $counter');
         }),
     );
   }
